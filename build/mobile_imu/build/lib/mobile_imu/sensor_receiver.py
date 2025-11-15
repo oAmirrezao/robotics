@@ -6,7 +6,6 @@ from sensor_msgs.msg import Imu
 from flask import Flask, request
 import threading
 import json
-import time
 
 
 class SensorReceiver(Node):
@@ -21,10 +20,10 @@ class SensorReceiver(Node):
         self.app.add_url_rule('/sensor', 'sensor', self.sensor_callback, methods=['POST'])
         
         # Data storage
-        self.latest_accel = [0.0, 0.0, 0.0]
+        self.latest_accel = [0.0, 0.0, 9.81]
         self.latest_gyro = [0.0, 0.0, 0.0]
-        self.latest_mag = [0.0, 0.0, 0.0]
         self.data_received = False
+        self.first_log = True
         
         # Timer to publish at fixed rate
         self.timer = self.create_timer(0.02, self.publish_imu)  # 50 Hz
@@ -45,39 +44,52 @@ class SensorReceiver(Node):
         try:
             data = request.get_json()
             
-            # Parse accelerometer data
-            if 'Acc' in data or 'accelerometer' in data:
-                acc_key = 'Acc' if 'Acc' in data else 'accelerometer'
-                self.latest_accel = [
-                    float(data[acc_key].get('x', 0.0)),
-                    float(data[acc_key].get('y', 0.0)),
-                    float(data[acc_key].get('z', 0.0))
-                ]
+            # Log first data for debugging
+            if self.first_log:
+                self.get_logger().info('='*60)
+                self.get_logger().info('First data received!')
+                self.get_logger().info(f'Keys: {data.keys()}')
+                self.first_log = False
             
-            # Parse gyroscope data
-            if 'Gyr' in data or 'gyroscope' in data:
-                gyr_key = 'Gyr' if 'Gyr' in data else 'gyroscope'
-                self.latest_gyro = [
-                    float(data[gyr_key].get('x', 0.0)),
-                    float(data[gyr_key].get('y', 0.0)),
-                    float(data[gyr_key].get('z', 0.0))
-                ]
+            # Parse Sensor Logger format with payload array
+            if 'payload' in data and isinstance(data['payload'], list):
+                for sensor_data in data['payload']:
+                    if not isinstance(sensor_data, dict):
+                        continue
+                    
+                    sensor_name = sensor_data.get('name', '').lower()
+                    values = sensor_data.get('values', {})
+                    
+                    # Accelerometer
+                    if 'accel' in sensor_name:
+                        self.latest_accel = [
+                            float(values.get('x', 0.0)),
+                            float(values.get('y', 0.0)),
+                            float(values.get('z', 9.81))
+                        ]
+                        self.data_received = True
+                    
+                    # Gyroscope
+                    elif 'gyro' in sensor_name:
+                        self.latest_gyro = [
+                            float(values.get('x', 0.0)),
+                            float(values.get('y', 0.0)),
+                            float(values.get('z', 0.0))
+                        ]
+                        self.data_received = True
             
-            # Parse magnetometer data
-            if 'Mag' in data or 'magnetometer' in data:
-                mag_key = 'Mag' if 'Mag' in data else 'magnetometer'
-                self.latest_mag = [
-                    float(data[mag_key].get('x', 0.0)),
-                    float(data[mag_key].get('y', 0.0)),
-                    float(data[mag_key].get('z', 0.0))
-                ]
-            
-            self.data_received = True
+            if self.data_received and self.first_log:
+                self.get_logger().info('Successfully parsing sensor data!')
+                self.get_logger().info(f'Accel: {self.latest_accel}')
+                self.get_logger().info(f'Gyro: {self.latest_gyro}')
+                self.get_logger().info('='*60)
             
             return 'OK', 200
             
         except Exception as e:
-            self.get_logger().error(f'Error parsing sensor data: {e}')
+            self.get_logger().error(f'Error: {e}')
+            import traceback
+            self.get_logger().error(traceback.format_exc())
             return 'Error', 400
     
     def publish_imu(self):
@@ -99,7 +111,7 @@ class SensorReceiver(Node):
         msg.angular_velocity.y = self.latest_gyro[1]
         msg.angular_velocity.z = self.latest_gyro[2]
         
-        # We don't use orientation from phone, so leave it empty
+        # Orientation placeholder
         msg.orientation.w = 1.0
         
         self.imu_pub.publish(msg)

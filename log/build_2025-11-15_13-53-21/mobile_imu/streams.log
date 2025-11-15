@@ -1,0 +1,26 @@
+[0.603s] Invoking command in '/home/rosuser/ros2_ws/src/mobile_imu': PYTHONPATH=/home/rosuser/ros2_ws/build/mobile_imu/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mobile_imu build --build-base /home/rosuser/ros2_ws/build/mobile_imu/build install --record /home/rosuser/ros2_ws/build/mobile_imu/install.log --single-version-externally-managed install_data
+[0.822s] running egg_info
+[0.822s] writing ../../build/mobile_imu/mobile_imu.egg-info/PKG-INFO
+[0.823s] writing dependency_links to ../../build/mobile_imu/mobile_imu.egg-info/dependency_links.txt
+[0.823s] writing entry points to ../../build/mobile_imu/mobile_imu.egg-info/entry_points.txt
+[0.823s] writing requirements to ../../build/mobile_imu/mobile_imu.egg-info/requires.txt
+[0.823s] writing top-level names to ../../build/mobile_imu/mobile_imu.egg-info/top_level.txt
+[0.825s] reading manifest file '../../build/mobile_imu/mobile_imu.egg-info/SOURCES.txt'
+[0.826s] writing manifest file '../../build/mobile_imu/mobile_imu.egg-info/SOURCES.txt'
+[0.826s] running build
+[0.826s] running build_py
+[0.826s] copying mobile_imu/sensor_receiver.py -> /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu
+[0.827s] running install
+[0.827s] running install_lib
+[0.828s] copying /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu/sensor_receiver.py -> /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu
+[0.828s] byte-compiling /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu/sensor_receiver.py to sensor_receiver.cpython-310.pyc
+[0.829s] running install_data
+[0.830s] running install_egg_info
+[0.831s] removing '/home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu-0.0.1-py3.10.egg-info' (and everything under it)
+[0.832s] Copying ../../build/mobile_imu/mobile_imu.egg-info to /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu-0.0.1-py3.10.egg-info
+[0.833s] running install_scripts
+[0.855s] Installing mobile_imu_filter script to /home/rosuser/ros2_ws/install/mobile_imu/lib/mobile_imu
+[0.855s] Installing position_estimator script to /home/rosuser/ros2_ws/install/mobile_imu/lib/mobile_imu
+[0.855s] Installing sensor_receiver script to /home/rosuser/ros2_ws/install/mobile_imu/lib/mobile_imu
+[0.855s] writing list of installed files to '/home/rosuser/ros2_ws/build/mobile_imu/install.log'
+[0.892s] Invoked command in '/home/rosuser/ros2_ws/src/mobile_imu' returned '0': PYTHONPATH=/home/rosuser/ros2_ws/build/mobile_imu/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mobile_imu build --build-base /home/rosuser/ros2_ws/build/mobile_imu/build install --record /home/rosuser/ros2_ws/build/mobile_imu/install.log --single-version-externally-managed install_data

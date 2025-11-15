@@ -77,13 +77,22 @@ class MobileImuFilter(Node):
                 
                 # Determine gravity direction
                 accel_mag = np.linalg.norm(self.accel_bias)
-                self.accel_bias = self.accel_bias - (self.accel_bias / accel_mag) * 9.81
+                
+                if accel_mag > 0.1:  # Valid acceleration data
+                    # Remove gravity component
+                    gravity_direction = self.accel_bias / accel_mag
+                    self.accel_bias = self.accel_bias - gravity_direction * 9.81
+                else:
+                    # No valid data, use default
+                    self.get_logger().warn('No valid accelerometer data! Using default bias.')
+                    self.accel_bias = np.array([0.0, 0.0, 0.0])
                 
                 self.bias_calibrated = True
                 self.get_logger().info('=' * 50)
                 self.get_logger().info('Bias calibration complete!')
                 self.get_logger().info(f'Gyro bias: {self.gyro_bias}')
                 self.get_logger().info(f'Accel bias: {self.accel_bias}')
+                self.get_logger().info(f'Accel magnitude: {accel_mag:.2f} m/s^2')
                 self.get_logger().info('=' * 50)
         
         # Remove bias

@@ -4,7 +4,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Imu
 from nav_msgs.msg import Path
-from geometry_msgs.msg import PoseStamped, Quaternion
+from geometry_msgs.msg import PoseStamped
 import numpy as np
 import math
 
@@ -15,7 +15,12 @@ class PositionEstimator(Node):
         
         # Parameters
         self.declare_parameter('alpha', 0.98)
+        self.declare_parameter('velocity_damping', 0.98)
+        self.declare_parameter('accel_threshold', 0.05)
+        
         self.alpha = self.get_parameter('alpha').value
+        self.velocity_damping = self.get_parameter('velocity_damping').value
+        self.accel_threshold = self.get_parameter('accel_threshold').value
         
         # Subscriber
         self.imu_sub = self.create_subscription(
@@ -35,19 +40,21 @@ class PositionEstimator(Node):
         
         self.vx = 0.0
         self.vy = 0.0
-        self.vz = 0.0
         
         self.x = 0.0
         self.y = 0.0
-        self.z = 0.0
         
         self.path = Path()
         self.path.header.frame_id = 'map'
         
         self.last_time = None
+        self.sample_count = 0
         
+        self.get_logger().info('='*60)
         self.get_logger().info('Position Estimator started.')
-        self.get_logger().info('Move the phone in a square path!')
+        self.get_logger().info('IMPORTANT: Hold phone VERTICAL (like taking a photo)')
+        self.get_logger().info('Screen facing you, move FORWARD slowly')
+        self.get_logger().info('='*60)
     
     def imu_callback(self, msg):
         current_time = self.get_clock().now()
@@ -63,6 +70,8 @@ class PositionEstimator(Node):
         if dt <= 0 or dt > 1.0:
             return
         
+        self.sample_count += 1
+        
         # Get sensor data
         ax = msg.linear_acceleration.x
         ay = msg.linear_acceleration.y
@@ -72,76 +81,56 @@ class PositionEstimator(Node):
         gy = msg.angular_velocity.y
         gz = msg.angular_velocity.z
         
-        # === Complementary Filter for Orientation ===
+        # === Orientation Estimation (Only Yaw matters for 2D) ===
+        self.yaw += gz * dt
         
-        # Gyroscope integration
-        gyro_roll = self.roll + gx * dt
-        gyro_pitch = self.pitch + gy * dt
-        gyro_yaw = self.yaw + gz * dt
+        # Normalize yaw to [-pi, pi]
+        self.yaw = math.atan2(math.sin(self.yaw), math.cos(self.yaw))
         
-        # Accelerometer angles
-        accel_roll = math.atan2(ay, math.sqrt(ax**2 + az**2))
-        accel_pitch = math.atan2(-ax, math.sqrt(ay**2 + az**2))
+        # === Simplified 2D Motion Model ===
+        # Assume phone is held vertical (screen facing forward)
+        # ax = forward/backward acceleration
+        # ay = left/right acceleration
+        # az = up/down (should be ~9.81 when still)
         
-        # Complementary filter
-        self.roll = self.alpha * gyro_roll + (1 - self.alpha) * accel_roll
-        self.pitch = self.alpha * gyro_pitch + (1 - self.alpha) * accel_pitch
-        self.yaw = gyro_yaw
+        # Apply acceleration threshold (noise reduction)
+        if abs(ax) < self.accel_threshold:
+            ax = 0.0
+        if abs(ay) < self.accel_threshold:
+            ay = 0.0
         
-        # === Position Estimation ===
-        
-        # Remove gravity from acceleration (rotate to world frame)
-        cos_roll = math.cos(self.roll)
-        sin_roll = math.sin(self.roll)
-        cos_pitch = math.cos(self.pitch)
-        sin_pitch = math.sin(self.pitch)
+        # Transform acceleration to world frame using yaw
         cos_yaw = math.cos(self.yaw)
         sin_yaw = math.sin(self.yaw)
         
-        # Rotation matrix from body to world frame
-        # Simplified for small angles
-        ax_world = (ax * cos_pitch * cos_yaw + 
-                   ay * (sin_roll * sin_pitch * cos_yaw - cos_roll * sin_yaw) +
-                   az * (cos_roll * sin_pitch * cos_yaw + sin_roll * sin_yaw))
+        ax_world = ax * cos_yaw - ay * sin_yaw
+        ay_world = ax * sin_yaw + ay * cos_yaw
         
-        ay_world = (ax * cos_pitch * sin_yaw + 
-                   ay * (sin_roll * sin_pitch * sin_yaw + cos_roll * cos_yaw) +
-                   az * (cos_roll * sin_pitch * sin_yaw - sin_roll * cos_yaw))
+        # Update velocity (with damping to reduce drift)
+        self.vx = self.vx * self.velocity_damping + ax_world * dt
+        self.vy = self.vy * self.velocity_damping + ay_world * dt
         
-        az_world = (-ax * sin_pitch + 
-                   ay * sin_roll * cos_pitch +
-                   az * cos_roll * cos_pitch)
+        # Additional damping for very small velocities
+        if abs(self.vx) < 0.01:
+            self.vx = 0.0
+        if abs(self.vy) < 0.01:
+            self.vy = 0.0
         
-        # Remove gravity (assuming z points up)
-        az_world -= 9.81
-        
-        # Integration for velocity
-        self.vx += ax_world * dt
-        self.vy += ay_world * dt
-        self.vz += az_world * dt
-        
-        # Apply velocity damping to reduce drift
-        damping = 0.95
-        self.vx *= damping
-        self.vy *= damping
-        self.vz *= damping
-        
-        # Integration for position
+        # Update position
         self.x += self.vx * dt
         self.y += self.vy * dt
-        self.z += self.vz * dt
         
-        # Create pose for path
+        # Create and publish pose
         pose = PoseStamped()
         pose.header.stamp = current_time.to_msg()
         pose.header.frame_id = 'map'
         
         pose.pose.position.x = self.x
         pose.pose.position.y = self.y
-        pose.pose.position.z = self.z
+        pose.pose.position.z = 0.0
         
-        # Orientation as quaternion
-        quat = self.euler_to_quaternion(self.roll, self.pitch, self.yaw)
+        # Orientation as quaternion (only yaw)
+        quat = self.yaw_to_quaternion(self.yaw)
         pose.pose.orientation.x = quat[0]
         pose.pose.orientation.y = quat[1]
         pose.pose.orientation.z = quat[2]
@@ -150,33 +139,31 @@ class PositionEstimator(Node):
         # Add to path
         self.path.poses.append(pose)
         
-        # Keep only last 1000 poses
-        if len(self.path.poses) > 1000:
-            self.path.poses = self.path.poses[-1000:]
+        # Keep only last 2000 poses
+        if len(self.path.poses) > 2000:
+            self.path.poses = self.path.poses[-2000:]
         
         # Publish path
         self.path.header.stamp = current_time.to_msg()
         self.path_pub.publish(self.path)
         
-        # Log position every 2 seconds
-        if len(self.path.poses) % 100 == 0:
-            self.get_logger().info(f'Position: x={self.x:.2f}, y={self.y:.2f}, z={self.z:.2f}')
+        # Log every 2 seconds (100 samples at 50Hz)
+        if self.sample_count % 100 == 0:
+            self.get_logger().info(
+                f'Pos: x={self.x:.2f}m, y={self.y:.2f}m | '
+                f'Vel: vx={self.vx:.2f}, vy={self.vy:.2f} | '
+                f'Yaw: {math.degrees(self.yaw):.1f}° | '
+                f'Accel: ax={ax:.2f}, ay={ay:.2f}, az={az:.2f}'
+            )
     
-    def euler_to_quaternion(self, roll, pitch, yaw):
-        """Convert Euler angles to quaternion"""
-        cy = math.cos(yaw * 0.5)
-        sy = math.sin(yaw * 0.5)
-        cp = math.cos(pitch * 0.5)
-        sp = math.sin(pitch * 0.5)
-        cr = math.cos(roll * 0.5)
-        sr = math.sin(roll * 0.5)
-        
-        w = cr * cp * cy + sr * sp * sy
-        x = sr * cp * cy - cr * sp * sy
-        y = cr * sp * cy + sr * cp * sy
-        z = cr * cp * sy - sr * sp * cy
-        
-        return [x, y, z, w]
+    def yaw_to_quaternion(self, yaw):
+        """Convert yaw angle to quaternion (x, y, z, w)"""
+        return [
+            0.0,
+            0.0,
+            math.sin(yaw / 2.0),
+            math.cos(yaw / 2.0)
+        ]
 
 
 def main(args=None):
