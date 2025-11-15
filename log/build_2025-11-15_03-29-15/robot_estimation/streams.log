@@ -1,0 +1,25 @@
+[0.489s] Invoking command in '/home/rosuser/ros2_ws/src/robot_estimation': PYTHONPATH=/home/rosuser/ros2_ws/build/robot_estimation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_estimation build --build-base /home/rosuser/ros2_ws/build/robot_estimation/build install --record /home/rosuser/ros2_ws/build/robot_estimation/install.log --single-version-externally-managed install_data
+[0.631s] running egg_info
+[0.631s] writing ../../build/robot_estimation/robot_estimation.egg-info/PKG-INFO
+[0.631s] writing dependency_links to ../../build/robot_estimation/robot_estimation.egg-info/dependency_links.txt
+[0.631s] writing entry points to ../../build/robot_estimation/robot_estimation.egg-info/entry_points.txt
+[0.632s] writing requirements to ../../build/robot_estimation/robot_estimation.egg-info/requires.txt
+[0.632s] writing top-level names to ../../build/robot_estimation/robot_estimation.egg-info/top_level.txt
+[0.633s] reading manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+[0.633s] writing manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+[0.634s] running build
+[0.634s] running build_py
+[0.634s] running install
+[0.635s] running install_lib
+[0.636s] running install_data
+[0.636s] running install_egg_info
+[0.637s] removing '/home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation-0.0.1-py3.10.egg-info' (and everything under it)
+[0.637s] Copying ../../build/robot_estimation/robot_estimation.egg-info to /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation-0.0.1-py3.10.egg-info
+[0.637s] running install_scripts
+[0.650s] Installing complementary_filter script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.650s] Installing imu_filter script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.650s] Installing motion_controller script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.650s] Installing motion_odometry script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.650s] Installing wheel_rpm_publisher script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.651s] writing list of installed files to '/home/rosuser/ros2_ws/build/robot_estimation/install.log'
+[0.667s] Invoked command in '/home/rosuser/ros2_ws/src/robot_estimation' returned '0': PYTHONPATH=/home/rosuser/ros2_ws/build/robot_estimation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_estimation build --build-base /home/rosuser/ros2_ws/build/robot_estimation/build install --record /home/rosuser/ros2_ws/build/robot_estimation/install.log --single-version-externally-managed install_data

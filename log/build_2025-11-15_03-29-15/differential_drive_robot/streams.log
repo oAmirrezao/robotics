@@ -1,0 +1,43 @@
+[0.491s] Invoking command in '/home/rosuser/ros2_ws/src/differential_drive_robot': PYTHONPATH=/home/rosuser/ros2_ws/build/differential_drive_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/differential_drive_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/differential_drive_robot build --build-base /home/rosuser/ros2_ws/build/differential_drive_robot/build install --record /home/rosuser/ros2_ws/build/differential_drive_robot/install.log --single-version-externally-managed install_data
+[0.635s] running egg_info
+[0.635s] creating ../../build/differential_drive_robot/differential_drive_robot.egg-info
+[0.635s] writing ../../build/differential_drive_robot/differential_drive_robot.egg-info/PKG-INFO
+[0.635s] writing dependency_links to ../../build/differential_drive_robot/differential_drive_robot.egg-info/dependency_links.txt
+[0.636s] writing entry points to ../../build/differential_drive_robot/differential_drive_robot.egg-info/entry_points.txt
+[0.636s] writing requirements to ../../build/differential_drive_robot/differential_drive_robot.egg-info/requires.txt
+[0.636s] writing top-level names to ../../build/differential_drive_robot/differential_drive_robot.egg-info/top_level.txt
+[0.636s] writing manifest file '../../build/differential_drive_robot/differential_drive_robot.egg-info/SOURCES.txt'
+[0.639s] reading manifest file '../../build/differential_drive_robot/differential_drive_robot.egg-info/SOURCES.txt'
+[0.639s] writing manifest file '../../build/differential_drive_robot/differential_drive_robot.egg-info/SOURCES.txt'
+[0.639s] running build
+[0.640s] running build_py
+[0.640s] creating /home/rosuser/ros2_ws/build/differential_drive_robot/build
+[0.640s] creating /home/rosuser/ros2_ws/build/differential_drive_robot/build/lib
+[0.640s] creating /home/rosuser/ros2_ws/build/differential_drive_robot/build/lib/differential_drive_robot
+[0.640s] copying differential_drive_robot/__init__.py -> /home/rosuser/ros2_ws/build/differential_drive_robot/build/lib/differential_drive_robot
+[0.640s] running install
+[0.640s] running install_lib
+[0.641s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/lib/python3.10/site-packages/differential_drive_robot
+[0.641s] copying /home/rosuser/ros2_ws/build/differential_drive_robot/build/lib/differential_drive_robot/__init__.py -> /home/rosuser/ros2_ws/install/differential_drive_robot/lib/python3.10/site-packages/differential_drive_robot
+[0.641s] byte-compiling /home/rosuser/ros2_ws/install/differential_drive_robot/lib/python3.10/site-packages/differential_drive_robot/__init__.py to __init__.cpython-310.pyc
+[0.641s] running install_data
+[0.641s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/share/ament_index
+[0.641s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/share/ament_index/resource_index
+[0.641s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/share/ament_index/resource_index/packages
+[0.642s] copying resource/differential_drive_robot -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/ament_index/resource_index/packages
+[0.642s] copying package.xml -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot
+[0.642s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/launch
+[0.642s] copying launch/gazebo.launch.py -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/launch
+[0.642s] copying launch/display.launch.py -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/launch
+[0.643s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/urdf
+[0.643s] copying urdf/robot.urdf.xacro -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/urdf
+[0.643s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/rviz
+[0.643s] copying rviz/gazebo.rviz -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/rviz
+[0.643s] copying rviz/display.rviz -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/rviz
+[0.644s] creating /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/worlds
+[0.644s] copying worlds/empty_world.world -> /home/rosuser/ros2_ws/install/differential_drive_robot/share/differential_drive_robot/worlds
+[0.644s] running install_egg_info
+[0.646s] Copying ../../build/differential_drive_robot/differential_drive_robot.egg-info to /home/rosuser/ros2_ws/install/differential_drive_robot/lib/python3.10/site-packages/differential_drive_robot-0.0.1-py3.10.egg-info
+[0.646s] running install_scripts
+[0.659s] writing list of installed files to '/home/rosuser/ros2_ws/build/differential_drive_robot/install.log'
+[0.678s] Invoked command in '/home/rosuser/ros2_ws/src/differential_drive_robot' returned '0': PYTHONPATH=/home/rosuser/ros2_ws/build/differential_drive_robot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/differential_drive_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/differential_drive_robot build --build-base /home/rosuser/ros2_ws/build/differential_drive_robot/build install --record /home/rosuser/ros2_ws/build/differential_drive_robot/install.log --single-version-externally-managed install_data

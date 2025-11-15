@@ -1,0 +1,47 @@
+[0.383s] Invoking command in '/home/rosuser/ros2_ws/src/mobile_imu': PYTHONPATH=/home/rosuser/ros2_ws/build/mobile_imu/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mobile_imu build --build-base /home/rosuser/ros2_ws/build/mobile_imu/build install --record /home/rosuser/ros2_ws/build/mobile_imu/install.log --single-version-externally-managed install_data
+[0.487s] running egg_info
+[0.487s] creating ../../build/mobile_imu/mobile_imu.egg-info
+[0.487s] writing ../../build/mobile_imu/mobile_imu.egg-info/PKG-INFO
+[0.489s] writing dependency_links to ../../build/mobile_imu/mobile_imu.egg-info/dependency_links.txt
+[0.489s] writing entry points to ../../build/mobile_imu/mobile_imu.egg-info/entry_points.txt
+[0.489s] writing requirements to ../../build/mobile_imu/mobile_imu.egg-info/requires.txt
+[0.489s] writing top-level names to ../../build/mobile_imu/mobile_imu.egg-info/top_level.txt
+[0.489s] writing manifest file '../../build/mobile_imu/mobile_imu.egg-info/SOURCES.txt'
+[0.490s] reading manifest file '../../build/mobile_imu/mobile_imu.egg-info/SOURCES.txt'
+[0.490s] writing manifest file '../../build/mobile_imu/mobile_imu.egg-info/SOURCES.txt'
+[0.490s] running build
+[0.490s] running build_py
+[0.491s] creating /home/rosuser/ros2_ws/build/mobile_imu/build
+[0.491s] creating /home/rosuser/ros2_ws/build/mobile_imu/build/lib
+[0.491s] creating /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu
+[0.492s] copying mobile_imu/sensor_receiver.py -> /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu
+[0.492s] copying mobile_imu/__init__.py -> /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu
+[0.492s] copying mobile_imu/mobile_imu_filter.py -> /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu
+[0.492s] copying mobile_imu/position_estimator.py -> /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu
+[0.492s] running install
+[0.492s] running install_lib
+[0.492s] creating /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu
+[0.492s] copying /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu/sensor_receiver.py -> /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu
+[0.493s] copying /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu/__init__.py -> /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu
+[0.493s] copying /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu/mobile_imu_filter.py -> /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu
+[0.493s] copying /home/rosuser/ros2_ws/build/mobile_imu/build/lib/mobile_imu/position_estimator.py -> /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu
+[0.493s] byte-compiling /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu/sensor_receiver.py to sensor_receiver.cpython-310.pyc
+[0.493s] byte-compiling /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu/__init__.py to __init__.cpython-310.pyc
+[0.493s] byte-compiling /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu/mobile_imu_filter.py to mobile_imu_filter.cpython-310.pyc
+[0.494s] byte-compiling /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu/position_estimator.py to position_estimator.cpython-310.pyc
+[0.495s] running install_data
+[0.495s] creating /home/rosuser/ros2_ws/install/mobile_imu/share/ament_index
+[0.495s] creating /home/rosuser/ros2_ws/install/mobile_imu/share/ament_index/resource_index
+[0.495s] creating /home/rosuser/ros2_ws/install/mobile_imu/share/ament_index/resource_index/packages
+[0.495s] copying resource/mobile_imu -> /home/rosuser/ros2_ws/install/mobile_imu/share/ament_index/resource_index/packages
+[0.495s] copying package.xml -> /home/rosuser/ros2_ws/install/mobile_imu/share/mobile_imu
+[0.495s] creating /home/rosuser/ros2_ws/install/mobile_imu/share/mobile_imu/launch
+[0.495s] copying launch/mobile_imu.launch.py -> /home/rosuser/ros2_ws/install/mobile_imu/share/mobile_imu/launch
+[0.495s] running install_egg_info
+[0.496s] Copying ../../build/mobile_imu/mobile_imu.egg-info to /home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages/mobile_imu-0.0.1-py3.10.egg-info
+[0.496s] running install_scripts
+[0.507s] Installing mobile_imu_filter script to /home/rosuser/ros2_ws/install/mobile_imu/lib/mobile_imu
+[0.507s] Installing position_estimator script to /home/rosuser/ros2_ws/install/mobile_imu/lib/mobile_imu
+[0.507s] Installing sensor_receiver script to /home/rosuser/ros2_ws/install/mobile_imu/lib/mobile_imu
+[0.507s] writing list of installed files to '/home/rosuser/ros2_ws/build/mobile_imu/install.log'
+[0.520s] Invoked command in '/home/rosuser/ros2_ws/src/mobile_imu' returned '0': PYTHONPATH=/home/rosuser/ros2_ws/build/mobile_imu/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/mobile_imu/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/mobile_imu build --build-base /home/rosuser/ros2_ws/build/mobile_imu/build install --record /home/rosuser/ros2_ws/build/mobile_imu/install.log --single-version-externally-managed install_data

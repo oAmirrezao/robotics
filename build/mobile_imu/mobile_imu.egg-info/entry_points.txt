@@ -1,0 +1,5 @@
+[console_scripts]
+mobile_imu_filter = mobile_imu.mobile_imu_filter:main
+position_estimator = mobile_imu.position_estimator:main
+sensor_receiver = mobile_imu.sensor_receiver:main
+

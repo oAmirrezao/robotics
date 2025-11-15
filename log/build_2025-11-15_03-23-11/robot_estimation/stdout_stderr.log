@@ -1,0 +1,63 @@
+running egg_info
+creating ../../build/robot_estimation/robot_estimation.egg-info
+writing ../../build/robot_estimation/robot_estimation.egg-info/PKG-INFO
+writing dependency_links to ../../build/robot_estimation/robot_estimation.egg-info/dependency_links.txt
+writing entry points to ../../build/robot_estimation/robot_estimation.egg-info/entry_points.txt
+writing requirements to ../../build/robot_estimation/robot_estimation.egg-info/requires.txt
+writing top-level names to ../../build/robot_estimation/robot_estimation.egg-info/top_level.txt
+writing manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+reading manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+writing manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rosuser/ros2_ws/build/robot_estimation/build
+creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib
+creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation
+copying robot_estimation/__init__.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation
+creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+copying robot_estimation/filters/complementary_filter.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+copying robot_estimation/filters/imu_filter.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+copying robot_estimation/filters/__init__.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+copying robot_estimation/motion_model/motion_odometry.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+copying robot_estimation/motion_model/wheel_rpm_publisher.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+copying robot_estimation/motion_model/__init__.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+copying robot_estimation/motion_model/motion_controller.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+running install
+running install_lib
+creating /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation
+creating /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/motion_odometry.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/wheel_rpm_publisher.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/__init__.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/motion_controller.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/__init__.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation
+creating /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters/complementary_filter.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters/imu_filter.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters/__init__.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/motion_odometry.py to motion_odometry.cpython-310.pyc
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/wheel_rpm_publisher.py to wheel_rpm_publisher.cpython-310.pyc
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/motion_controller.py to motion_controller.cpython-310.pyc
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters/complementary_filter.py to complementary_filter.cpython-310.pyc
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters/imu_filter.py to imu_filter.cpython-310.pyc
+byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index
+creating /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index/resource_index
+creating /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index/resource_index/packages
+copying resource/robot_estimation -> /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index/resource_index/packages
+copying package.xml -> /home/rosuser/ros2_ws/install/robot_estimation/share/robot_estimation
+creating /home/rosuser/ros2_ws/install/robot_estimation/share/robot_estimation/launch
+copying launch/estimator.launch.py -> /home/rosuser/ros2_ws/install/robot_estimation/share/robot_estimation/launch
+running install_egg_info
+Copying ../../build/robot_estimation/robot_estimation.egg-info to /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation-0.0.1-py3.10.egg-info
+running install_scripts
+Installing complementary_filter script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+Installing imu_filter script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+Installing motion_controller script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+Installing motion_odometry script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+Installing wheel_rpm_publisher script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+writing list of installed files to '/home/rosuser/ros2_ws/build/robot_estimation/install.log'

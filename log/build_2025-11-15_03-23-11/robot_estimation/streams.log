@@ -1,0 +1,65 @@
+[0.498s] Invoking command in '/home/rosuser/ros2_ws/src/robot_estimation': PYTHONPATH=/home/rosuser/ros2_ws/build/robot_estimation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_estimation build --build-base /home/rosuser/ros2_ws/build/robot_estimation/build install --record /home/rosuser/ros2_ws/build/robot_estimation/install.log --single-version-externally-managed install_data
+[0.641s] running egg_info
+[0.641s] creating ../../build/robot_estimation/robot_estimation.egg-info
+[0.641s] writing ../../build/robot_estimation/robot_estimation.egg-info/PKG-INFO
+[0.641s] writing dependency_links to ../../build/robot_estimation/robot_estimation.egg-info/dependency_links.txt
+[0.641s] writing entry points to ../../build/robot_estimation/robot_estimation.egg-info/entry_points.txt
+[0.641s] writing requirements to ../../build/robot_estimation/robot_estimation.egg-info/requires.txt
+[0.642s] writing top-level names to ../../build/robot_estimation/robot_estimation.egg-info/top_level.txt
+[0.642s] writing manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+[0.644s] reading manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+[0.645s] writing manifest file '../../build/robot_estimation/robot_estimation.egg-info/SOURCES.txt'
+[0.645s] running build
+[0.645s] running build_py
+[0.645s] creating /home/rosuser/ros2_ws/build/robot_estimation/build
+[0.645s] creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib
+[0.645s] creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation
+[0.646s] copying robot_estimation/__init__.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation
+[0.646s] creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+[0.646s] copying robot_estimation/filters/complementary_filter.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+[0.646s] copying robot_estimation/filters/imu_filter.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+[0.646s] copying robot_estimation/filters/__init__.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters
+[0.646s] creating /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+[0.646s] copying robot_estimation/motion_model/motion_odometry.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+[0.647s] copying robot_estimation/motion_model/wheel_rpm_publisher.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+[0.647s] copying robot_estimation/motion_model/__init__.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+[0.647s] copying robot_estimation/motion_model/motion_controller.py -> /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model
+[0.648s] running install
+[0.648s] running install_lib
+[0.648s] creating /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation
+[0.648s] creating /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/motion_odometry.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/wheel_rpm_publisher.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/__init__.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/motion_model/motion_controller.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/__init__.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation
+[0.649s] creating /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters/complementary_filter.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters/imu_filter.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+[0.649s] copying /home/rosuser/ros2_ws/build/robot_estimation/build/lib/robot_estimation/filters/__init__.py -> /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters
+[0.650s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/motion_odometry.py to motion_odometry.cpython-310.pyc
+[0.651s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/wheel_rpm_publisher.py to wheel_rpm_publisher.cpython-310.pyc
+[0.651s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/__init__.py to __init__.cpython-310.pyc
+[0.651s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/motion_model/motion_controller.py to motion_controller.cpython-310.pyc
+[0.652s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/__init__.py to __init__.cpython-310.pyc
+[0.652s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters/complementary_filter.py to complementary_filter.cpython-310.pyc
+[0.652s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters/imu_filter.py to imu_filter.cpython-310.pyc
+[0.653s] byte-compiling /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation/filters/__init__.py to __init__.cpython-310.pyc
+[0.653s] running install_data
+[0.653s] creating /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index
+[0.653s] creating /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index/resource_index
+[0.653s] creating /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index/resource_index/packages
+[0.654s] copying resource/robot_estimation -> /home/rosuser/ros2_ws/install/robot_estimation/share/ament_index/resource_index/packages
+[0.654s] copying package.xml -> /home/rosuser/ros2_ws/install/robot_estimation/share/robot_estimation
+[0.654s] creating /home/rosuser/ros2_ws/install/robot_estimation/share/robot_estimation/launch
+[0.654s] copying launch/estimator.launch.py -> /home/rosuser/ros2_ws/install/robot_estimation/share/robot_estimation/launch
+[0.654s] running install_egg_info
+[0.655s] Copying ../../build/robot_estimation/robot_estimation.egg-info to /home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages/robot_estimation-0.0.1-py3.10.egg-info
+[0.656s] running install_scripts
+[0.669s] Installing complementary_filter script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.670s] Installing imu_filter script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.670s] Installing motion_controller script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.670s] Installing motion_odometry script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.670s] Installing wheel_rpm_publisher script to /home/rosuser/ros2_ws/install/robot_estimation/lib/robot_estimation
+[0.670s] writing list of installed files to '/home/rosuser/ros2_ws/build/robot_estimation/install.log'
+[0.685s] Invoked command in '/home/rosuser/ros2_ws/src/robot_estimation' returned '0': PYTHONPATH=/home/rosuser/ros2_ws/build/robot_estimation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rosuser/ros2_ws/install/robot_estimation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_estimation build --build-base /home/rosuser/ros2_ws/build/robot_estimation/build install --record /home/rosuser/ros2_ws/build/robot_estimation/install.log --single-version-externally-managed install_data

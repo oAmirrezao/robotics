@@ -1,0 +1,7 @@
+[console_scripts]
+complementary_filter = robot_estimation.filters.complementary_filter:main
+imu_filter = robot_estimation.filters.imu_filter:main
+motion_controller = robot_estimation.motion_model.motion_controller:main
+motion_odometry = robot_estimation.motion_model.motion_odometry:main
+wheel_rpm_publisher = robot_estimation.motion_model.wheel_rpm_publisher:main
+
